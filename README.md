@@ -254,15 +254,6 @@ kubectl top pods -A
 
 ---
 
-# 📚 Documentation
-
-- README.md
-- SETUP-GUIDE.md
-- Kubernetes Manifests
-- Configuration Files
-
----
-
 # 👨‍💻 Author
 
 **Shivani Sharma**
