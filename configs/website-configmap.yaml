@@ -1,0 +1,105 @@
+apiVersion: v1
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Kubernetes Project</title>
+
+      <style>
+      body {
+          margin: 0;
+          padding: 0;
+          background: linear-gradient(135deg,#07132d,#0f172a,#1e293b);
+          font-family: Arial, sans-serif;
+          color: white;
+          text-align: center;
+      }
+
+      .container {
+          margin-top: 80px;
+      }
+
+      h1 {
+          color: #38bdf8;
+          font-size: 60px;
+      }
+
+      h2 {
+          color: #22c55e;
+          font-size: 40px;
+      }
+
+      h3 {
+          color: #facc15;
+          font-size: 28px;
+      }
+
+      .card {
+          width: 80%;
+          margin: auto;
+          margin-top: 30px;
+          padding: 30px;
+          background: rgba(255,255,255,0.08);
+          border-radius: 20px;
+          box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+      }
+
+      .tech {
+          font-size: 24px;
+          line-height: 45px;
+      }
+
+      .footer {
+          margin-top: 40px;
+          color: #94a3b8;
+          font-size: 18px;
+      }
+      </style>
+
+    </head>
+
+    <body>
+
+      <div class="container">
+
+        <h1>KUBERNETES CLUSTER PROJECT</h1>
+
+        <h2>Developed by Shivani Sharma</h2>
+
+        <h3>VMware Cloud Director</h3>
+
+        <div class="card">
+
+          <h2>5 Node Kubernetes Cluster</h2>
+
+          <div class="tech">
+            Nginx | Apache | MySQL | PostgreSQL <br><br>
+
+            Redis | MinIO | Persistent Storage <br><br>
+
+            Scaling | Self Healing | Rollback <br><br>
+
+            Rolling Updates | ConfigMaps | Node Selectors
+          </div>
+
+        </div>
+
+        <div class="footer">
+          B.Tech CSE Project • Kubernetes on VMware Cloud Director
+        </div>
+
+      </div>
+
+    </body>
+    </html>
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"index.html":"\u003c!DOCTYPE html\u003e\n\u003chtml\u003e\n\u003chead\u003e\n  \u003ctitle\u003eKubernetes Project\u003c/title\u003e\n\n  \u003cstyle\u003e\n  body {\n      margin: 0;\n      padding: 0;\n      background: linear-gradient(135deg,#07132d,#0f172a,#1e293b);\n      font-family: Arial, sans-serif;\n      color: white;\n      text-align: center;\n  }\n\n  .container {\n      margin-top: 80px;\n  }\n\n  h1 {\n      color: #38bdf8;\n      font-size: 60px;\n  }\n\n  h2 {\n      color: #22c55e;\n      font-size: 40px;\n  }\n\n  h3 {\n      color: #facc15;\n      font-size: 28px;\n  }\n\n  .card {\n      width: 80%;\n      margin: auto;\n      margin-top: 30px;\n      padding: 30px;\n      background: rgba(255,255,255,0.08);\n      border-radius: 20px;\n      box-shadow: 0px 0px 20px rgba(0,0,0,0.4);\n  }\n\n  .tech {\n      font-size: 24px;\n      line-height: 45px;\n  }\n\n  .footer {\n      margin-top: 40px;\n      color: #94a3b8;\n      font-size: 18px;\n  }\n  \u003c/style\u003e\n\n\u003c/head\u003e\n\n\u003cbody\u003e\n\n  \u003cdiv class=\"container\"\u003e\n\n    \u003ch1\u003eKUBERNETES CLUSTER PROJECT\u003c/h1\u003e\n\n    \u003ch2\u003eDeveloped by Shivani Sharma\u003c/h2\u003e\n\n    \u003ch3\u003eVMware Cloud Director\u003c/h3\u003e\n\n    \u003cdiv class=\"card\"\u003e\n\n      \u003ch2\u003e5 Node Kubernetes Cluster\u003c/h2\u003e\n\n      \u003cdiv class=\"tech\"\u003e\n        Nginx | Apache | MySQL | PostgreSQL \u003cbr\u003e\u003cbr\u003e\n\n        Redis | MinIO | Persistent Storage \u003cbr\u003e\u003cbr\u003e\n\n        Scaling | Self Healing | Rollback \u003cbr\u003e\u003cbr\u003e\n\n        Rolling Updates | ConfigMaps | Node Selectors\n      \u003c/div\u003e\n\n    \u003c/div\u003e\n\n    \u003cdiv class=\"footer\"\u003e\n      B.Tech CSE Project • Kubernetes on VMware Cloud Director\n    \u003c/div\u003e\n\n  \u003c/div\u003e\n\n\u003c/body\u003e\n\u003c/html\u003e\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"website-content","namespace":"web"}}
+  creationTimestamp: "2026-06-29T06:09:28Z"
+  name: website-content
+  namespace: web
+  resourceVersion: "438581"
+  uid: d0870a8a-af98-4c23-98a4-67f896f4fdf2

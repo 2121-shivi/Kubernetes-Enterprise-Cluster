@@ -1,0 +1,10 @@
+NAMESPACE              NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                         AGE
+database               mysql-service               ClusterIP   10.99.162.35     <none>        3306/TCP                        2d21h
+default                kubernetes                  ClusterIP   10.96.0.1        <none>        443/TCP                         2d23h
+kube-system            kube-dns                    ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP          2d23h
+kube-system            metrics-server              ClusterIP   10.103.254.113   <none>        443/TCP                         50m
+kubernetes-dashboard   dashboard-metrics-scraper   ClusterIP   10.102.85.51     <none>        8000/TCP                        37m
+kubernetes-dashboard   kubernetes-dashboard        NodePort    10.96.164.50     <none>        443:32002/TCP                   37m
+storage                minio-service               NodePort    10.99.203.2      <none>        9000:30900/TCP,9001:30901/TCP   2d20h
+web                    apache-service              NodePort    10.109.90.82     <none>        80:30081/TCP                    2d20h
+web                    nginx-service               NodePort    10.101.88.168    <none>        80:30080/TCP                    2d20h

@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"minio","namespace":"storage"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"minio"}},"template":{"metadata":{"labels":{"app":"minio"}},"spec":{"containers":[{"args":["server","/data","--console-address",":9001"],"env":[{"name":"MINIO_ROOT_USER","value":"admin"},{"name":"MINIO_ROOT_PASSWORD","value":"password123"}],"image":"minio/minio","name":"minio","ports":[{"containerPort":9000},{"containerPort":9001}]}],"nodeSelector":{"role":"storage"}}}}}
+  creationTimestamp: "2026-06-26T10:43:18Z"
+  generation: 1
+  name: minio
+  namespace: storage
+  resourceVersion: "21883"
+  uid: 9622800d-c901-4842-beb4-423a31e10264
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: minio
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: minio
+    spec:
+      containers:
+      - args:
+        - server
+        - /data
+        - --console-address
+        - :9001
+        env:
+        - name: MINIO_ROOT_USER
+          value: admin
+        - name: MINIO_ROOT_PASSWORD
+          value: password123
+        image: minio/minio
+        imagePullPolicy: Always
+        name: minio
+        ports:
+        - containerPort: 9000
+          protocol: TCP
+        - containerPort: 9001
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        role: storage
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2026-06-26T11:11:04Z"
+    lastUpdateTime: "2026-06-26T11:11:04Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2026-06-26T11:11:04Z"
+    lastUpdateTime: "2026-06-26T11:11:04Z"
+    message: ReplicaSet "minio-694b84fdbc" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
